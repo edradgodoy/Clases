@@ -2,18 +2,30 @@
 
 class Autoload
 {
-	
+
 	public function mostrar()
 	{
-		if (isset($_GET['pag'])) {
-			$pagina = $_GET['pag'];
+		if (isset($_SESSION['username'])) {
+			// si la variable GET de la URL existe
+			if (isset($_GET['pag'])) {
+				$pagina = $_GET['pag'];
+			} else {
+				$pagina = 'dashboard';
+			}
+
+			// lista blanca de paginas
+			if ($pagina == 'dashboard' || $pagina == 'productos') {
+				$pag = $pagina;
+			} else {
+				$pag = 'dashboard';
+			}
+			include 'views/header.php';
+			include 'views/'.$pag.'.php';
+			include 'views/footer.php';
+
 		} else {
-			$pagina = 'dashboard';
+			include 'views/login.php';
 		}
-		
-		include 'views/header.php';
-		include 'views/'.$pagina.'.php';
-		include 'views/footer.php';
 	}
 }
 

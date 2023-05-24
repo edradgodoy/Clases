@@ -6,7 +6,13 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="d-flex flex-column h-100">
-  <h2 class="font-weight-bolder mb-0">Dashboard</h2>
+  <h2 class="font-weight-bolder mb-0">
+    <?php 
+      // $pass = 'Admin*123';
+      // echo crypt(sha1(md5('asdf'.$pass.'asdfsaf')), '$6$rounds=5000$usesomesillystringforsalt$');
+    ?>
+  <!-- Dashboard -->
+</h2>
 </div>
 
           </div>

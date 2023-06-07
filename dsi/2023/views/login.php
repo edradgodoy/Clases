@@ -44,7 +44,7 @@
   </head>
 
 
-  <body class="g-sidenav-show  bg-gray-100">
+<body class="g-sidenav-show  bg-gray-100">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Imgrese los datos de su cuenta</a>
 </nav>
@@ -70,7 +70,7 @@
 
 
 
-    <footer class="footer py-4  border-top">
+<footer class="footer py-4  border-top">
   <div class="container-fluid">
     <div class="row align-items-center justify-content-lg-between">
       <div class="col-lg-6 mb-lg-0 mb-4">

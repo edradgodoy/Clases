@@ -50,17 +50,24 @@
 </nav>
 <div class="row justify-content-md-center">
   <div class="col-md-6 my-5 py-5 border rounded">
-    <form class="mx-5 px-5">
+
+
+    <form class="mx-5 px-5" method="POST" action="">
       <h3 class="text-center">Iniciar sesión</h3>
       <div class="form-group">
         <label for="exampleInputEmail1">Nombre de usuario</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su nombre de usuario">
+        <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su nombre de usuario">
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Contraseña</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su contraseña">
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su contraseña">
       </div>
-      <button type="submit" class="btn btn-primary mt-2">Submit</button>
+      <input type="submit" name="InicioSistema" class="btn btn-success mt-2" value="Ingresar">
+    <?php
+      if (!empty($_POST['InicioSistema'])) {
+        include 'conexion/login.php';
+      } 
+    ?>
     </form>
   </div>
       

@@ -14,7 +14,7 @@ class Autoload
 			}
 
 			// lista blanca de paginas
-			if ($pagina == 'dashboard' || $pagina == 'productos') {
+			if ($pagina == 'dashboard' || $pagina == 'productos' || $pagina == 'logout' || $pagina == 'puestos' || $pagina == 'editPuesto' || $pagina == 'addPuesto' || $pagina == 'categorias' || $pagina == 'addCat' || $pagina == 'editCat') {
 				$pag = $pagina;
 			} else {
 				$pag = 'dashboard';

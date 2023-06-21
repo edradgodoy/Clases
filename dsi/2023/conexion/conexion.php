@@ -11,7 +11,7 @@ class conexion {
 	private $dbname = 'dsi';
 	private $dbusername = 'root';
 	private $dbpass = '';
-	private $charset = 'utf-8';
+	private $charset = 'utf8';
 	private $port = 3306;
 
 	private function __construct() {

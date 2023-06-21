@@ -3,6 +3,8 @@
   <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 
 <link rel="apple-touch-icon" sizes="76x76" href="asset/images/apple-icon.png">
 <link rel="icon" type="image/png" href="asset/images/favicon.png">
@@ -34,7 +36,20 @@
 
 
 
+ <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+<script src="asset/js/function.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+<!--   Core JS Files   -->
+<script src="asset/js/popper.min.js" ></script>
+<script src="asset/js/bootstrap.min.js" ></script>
+<script src="asset/js/perfect-scrollbar.min.js" ></script>
+<script src="asset/js/smooth-scrollbar.min.js" ></script>
 
+<!-- Github buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc --><script src="asset/js/material-dashboard.min.js?v=3.1.0"></script>
 
 <!-- Nepcha Analytics (nepcha.com) -->
 <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
@@ -81,16 +96,24 @@
 
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="./billing.html">
+  <a class="nav-link text-white " href="puestos">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="material-icons opacity-10">receipt_long</i>
       </div>
     
-    <span class="nav-link-text ms-1">Billing</span>
+    <span class="nav-link-text ms-1">Puestos</span>
   </a>
+
 </li>
 
+<li class="nav-item">
+  <a class="nav-link text-white " href="categorias">
+    
+    <span class="nav-link-text ms-1">Categorias</span>
+  </a>
+
+</li>
   
 <li class="nav-item">
   <a class="nav-link text-white " href="./virtual-reality.html">
@@ -145,13 +168,13 @@
 
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="./sign-in.html">
+  <a class="nav-link text-white " href="logout">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="material-icons opacity-10">login</i>
       </div>
     
-    <span class="nav-link-text ms-1">Sign In</span>
+    <span class="nav-link-text ms-1">Logout</span>
   </a>
 </li>
 
@@ -290,7 +313,7 @@
           <a href="./pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
             <i class="fa fa-user me-sm-1"></i>
             
-            <span class="d-sm-inline d-none">Sign In</span>
+            <span class="d-sm-inline d-none"><?php echo $_SESSION['username']; ?></span>
             
           </a>
         </li>

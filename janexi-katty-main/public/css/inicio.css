@@ -1,0 +1,99 @@
+html,body{
+  margin:0px;
+  padding-top:57px;
+}
+header{
+  padding: 5px;
+  background-color:forestgreen;
+  color:white;
+  font-size: large;
+}
+a{
+  color:black;
+}
+#formulariodebusqueda, #publicar,.formclave,.formnombre{
+  max-width: 60%;
+  margin: auto;
+  background-color:rgba(4, 192, 56, 0.3);;
+  padding:0px 5px 0px 5px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.9);
+}
+.resgistro
+{
+  max-width: 60%;
+  margin: auto;
+  background-color:rgba(4, 192, 56, 0.3);;
+  padding:0px 5px 0px 5px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.9);
+  min-width: 128px;
+
+}
+#mensajestodos{
+width:100%;
+height:auto;
+background-color:red;
+border-radius:12px;
+padding:8px;
+position:fixed;
+top:125px;
+color:white;
+left:0px;
+z-index:5;
+text-align:center;
+display:none;
+}
+
+.miembros{
+  max-width: 60%;
+  margin: auto;
+  background-color:rgba(4, 192, 56, 0.3);;
+  padding:0px 10px 0px 10px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.9);
+  min-width: 389px;
+}
+
+.administrador, .actividades{
+max-width: 60%;
+  margin: auto;
+  background-color:rgba(4, 192, 56, 0.3);;
+  padding:0px 5px 0px 5px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.9);
+  min-width: 317px;
+
+}
+
+.miembros, .administrador, .actividades{
+  display: none;
+}
+
+
+.table{
+  border-radius: 7px;
+  border:1px solid silver;
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
+  padding: 0px;
+  width: 80%;
+  margin: auto;
+
+}
+.editable span{display:block;}
+.editable span:hover {background:url("../img/edit.png") 90% 50% no-repeat;cursor:pointer}
+.guardar{background:url("../img/save.png") 0 0 no-repeat}
+a.enlace{display:inline-block;width:24px;height:24px;margin:0 0 0 5px;overflow:hidden;text-indent:-999em;vertical-align:middle}
+.cancelar{background:url("../img/cancel.png") 0 0 no-repeat}
+td input{height:24px;width:170px;border:1px solid #ddd;padding:0 5px;margin:0;border-radius:6px;vertical-align:middle}
+th{
+  background-color:#B6F690;
+  color: black;
+}
+td{
+  text-align:center;
+}
+#beliminar, #bimagen
+{
+  width: 100px;
+}

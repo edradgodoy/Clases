@@ -1,0 +1,21 @@
+.table{
+  border-radius: 7px;
+  border:1px solid silver;
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.5);
+  padding: 0px;
+  width: 100%;
+  vertical-align: middle;
+}
+th{
+  background-color:#B6F690;
+  color: black;
+}
+td{
+  text-align:left;
+}
+#dat
+{
+  width: 20%;
+  background-color: forestgreen;
+  color: white;
+}

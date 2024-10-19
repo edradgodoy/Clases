@@ -1,0 +1,93 @@
+.contenido-chat{
+	display: block;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+.contactos{
+	display: inline-block;
+	min-height: 800px;
+	width: 20%;
+	position: absolute;
+}
+
+.mensajes{
+	display: inline-block;
+	margin-left: 20%;
+	min-height: 800px;
+	width: 80%;
+}
+
+.dark-mc{
+	background-color: #1E2224; 
+	color:#FFF!important;
+}
+
+.form-nav, .form-nav[placeholder]{
+	background-color: #3A3F48; 
+	border-color: #3A3F48; 
+	color:#FFF!important;
+}
+.form-nav::placeholder {
+    color: #FFF!important; /* Cambia 'red' por el color que prefieras */
+}
+
+/* ESTILOS DE LA LISTA DE CONTACTOS */
+
+.contact-list{
+	list-style: none;
+	padding: 0px;
+}
+
+.contact-list>a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.contact-list li{
+	padding: 5px 20px;
+}
+
+.contact-list li:hover{
+	background-color: #1A95D5;
+	color: #fff;
+}
+
+.contact-list .img-contact{
+	display: inline-block;
+	text-align: left;
+	font-size: 50px;
+	max-height: 50px;
+}
+.img-contact::before {
+    vertical-align: 0em;
+}
+
+.contact-list h4{
+	display: inline-block;
+	position: absolute;
+	padding-left: 15px;
+	width: calc(100% - 70px);
+	margin-bottom: 0px;
+}
+
+.contact-list p{
+	display: inline-block;
+	margin-bottom: 3px;
+	padding-left: 15px;
+}
+
+.footer{
+	padding: 100px 0px;
+	background-color: #3A3F48;
+	color: #fff;
+	font-size: 18px;
+	/*width: calc(100% - 12px);*/
+}
+
+.footer>h3{
+	padding: 50px 0px;
+}
+.content-sms{
+	height: 100px;
+}

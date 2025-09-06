@@ -1,0 +1,165 @@
+<!-- <button id="btn">
+	Presioname...
+</button>
+
+<script>
+document.getElementById("btn").addEventListener("click", () => {
+    alert("¡Botón presionado!");
+});
+</script>
+
+
+<style>
+#colorBox {
+    width: 500px;
+    height: 500px;
+    background-color: #cccccc;
+    border: 2px solid #000;
+    margin-top: 10px;
+    margin-left: 10%;
+}
+</style>
+
+<h3>Selecciona un color:</h3>
+<input type="color" id="colorPicker" value="#cccccc">
+
+<div id="colorBox"></div>
+
+<script>
+const colorPicker = document.getElementById('colorPicker');
+const colorBox = document.getElementById('colorBox');
+
+colorPicker.addEventListener('input', function() {
+    colorBox.style.backgroundColor = this.value;
+});
+</script>
+
+<h3>Tamaño de texto:</h3>
+
+<input type="range" min="10" maxlength="100" id="font" value="10">
+
+<p id="text">Tamaño de texto...</p>
+
+<script>
+const font = document.getElementById('font');
+const text = document.getElementById('text');
+font.addEventListener('input', function(){
+	text.style.fontSize = this.value;
+	console.log(font);
+});
+</script>
+
+
+<h3>Tamaño de texto:</h3>
+<input type="range" min="10" maxlength="100" id="font2" value="10">
+
+<h3>Selecciona un color:</h3>
+<input type="color" id="colorPicker2" value="#cccccc">
+
+<p id="text2">Tamaño de texto...</p>
+
+<script>
+const text2 = document.getElementById('text2');
+const font2 = document.getElementById('font2');
+const color2 = document.getElementById('colorPicker2');
+
+color2.addEventListener('input', function() {
+    text2.style.color = this.value;
+});
+
+font2.addEventListener('input', function(){
+	text2.style.fontSize = this.value;
+});
+</script> -->
+
+
+<script>
+// let num1 = parseInt(prompt("Ingresa el primer número:"));
+// let num2 = parseInt(prompt("Ingresa el segundo número:"));
+// let suma = num1 + num2;
+// alert("La suma es: " + suma);
+
+// let numero = parseInt(prompt("Ingresa un número:"));
+
+// if (numero % 2 === 0) {
+//   alert("El número es par.");
+// } else {
+//   alert("El número es impar.");
+// }
+
+
+// let frutas = ["Manzana", "Banana", "Uva", "Sandía"];
+
+// for (let i = 0; i < frutas.length; i++) {
+//   console.log("Fruta: " + frutas[i]);
+// }
+</script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Estudiantes</title>
+  <style>
+    table {
+      width: 60%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #d0b3ff;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Tabla de Estudiantes</h2>
+  <table id="tablaEstudiantes">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Nota 1</th>
+        <th>Nota 2</th>
+        <th>Promedio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Aquí se insertarán los datos con JavaScript -->
+    </tbody>
+  </table>
+
+  <script>
+    const estudiantes = [
+      { nombre: "Ana", nota1: 85, nota2: 90 },
+      { nombre: "Luis", nota1: 78, nota2: 82 },
+      { nombre: "María", nota1: 92, nota2: 88 },
+      { nombre: "Carlos", nota1: 70, nota2: 75 }
+    ];
+
+    const tbody = document.querySelector("#tablaEstudiantes tbody");
+
+    estudiantes.forEach(est => {
+      const promedio = ((est.nota1 + est.nota2) / 2).toFixed(2);
+      const fila = `
+        <tr>
+          <td>${est.nombre}</td>
+          <td>${est.nota1}</td>
+          <td>${est.nota2}</td>
+          <td>${promedio}</td>
+        </tr>
+      `;
+      tbody.innerHTML += fila;
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplos</title>
+</head>
+<body>
+<!-- 
+96 `
+60 <
+62 >
+123 {
+125 }
+ -->
+
+<button id="btn">
+	Presioname...
+</button>
+
+<script>
+	let num1 = 154650;//crear variable
+	let num2 = 2545; //crear variable
+	let res = num1/num2;//operaciones
+	console.log(res); //mostrar en consola
+
+
+	let nota1 = 48;
+	let nota2 = 38;
+	let prom = (nota1+nota2)/2;
+	console.log(prom);
+
+	// condicionales 
+	if (prom >=60) {
+		console.log("Aprobado con la nota:"+prom);
+	} else {
+		console.log("Reprobado con la nota: "+prom);
+	}
+
+	// bucles
+	for (var i=0; i<=13; i++) {
+		console.log(i);
+	}
+
+document.getElementById("btn").addEventListener("click", () => {
+    alert("¡Botón presionado!");
+});
+
+
+</script>
+
+    <style>
+        #colorBox {
+            width: 500px;
+            height: 500px;
+            background-color: #cccccc;
+            border: 2px solid #000;
+            margin-top: 10px;
+            margin-left: 10%;
+        }
+    </style>
+
+    <h3>Selecciona un color:</h3>
+    <input type="color" id="colorPicker" value="#cccccc">
+    
+    <div id="colorBox"></div>
+
+    <script>
+        const colorPicker = document.getElementById('colorPicker');
+        const colorBox = document.getElementById('colorBox');
+
+        colorPicker.addEventListener('input', function() {
+            colorBox.style.backgroundColor = this.value;
+        });
+    </script>
+
+    <h3>Tamaño de texto:</h3>
+    <input type="range" min="10" maxlength="100" id="font" value="10">
+
+    <p id="text">Tamaño de texto...</p>
+    <script>
+    	const font = document.getElementById('font');
+    	const text = document.getElementById('text');
+    	font.addEventListener('input', function(){
+    		text.style.fontSize = this.value;
+    		console.log(font);
+    	});
+    </script>
+</body>
+</html>

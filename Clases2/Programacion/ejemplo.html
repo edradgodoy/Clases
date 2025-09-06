@@ -1,0 +1,39 @@
+<style>
+#colorBox {
+    width: 500px;
+    height: 500px;
+    background-color: #cccccc;
+    border: 2px solid #000;
+    margin-top: 10px;
+    margin-left: 10%;
+}
+</style>
+
+<h3>Selecciona un color:</h3>
+<input type="color" id="colorPicker" value="#cccccc">
+
+<div id="colorBox">
+</div>
+
+<script>
+const colorPicker = document.getElementById('colorPicker');
+const colorBox = document.getElementById('colorBox');
+
+colorPicker.addEventListener('input', function() {
+    colorBox.style.backgroundColor = this.value;
+});
+</script>
+
+
+
+<h3>Tamaño de texto:</h3>
+<input type="range" min="10" maxlength="100" id="font" value="10">
+
+<p id="text">Tamaño de texto...</p>
+<script>
+    const font = document.getElementById('font');
+    const text = document.getElementById('text');
+    font.addEventListener('input', function(){
+        text.style.fontSize = this.value;
+    });
+</script>

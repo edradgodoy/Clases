@@ -1,0 +1,28 @@
+<script>
+const datos = [10, -3, 5, 8, -1, 0, 7];
+function estadisticas(arr) {
+  let pares = 0, impares = 0, suma = 0;
+  let min = Number.POSITIVE_INFINITY;
+  let max = Number.NEGATIVE_INFINITY;
+  let primerNeg = -1, ultimoNeg = -1;
+  for (let i = 0; i < arr.length; i++) {
+    const x = arr[i];
+    // pares / impares
+    if (x % 2 === 0) pares++;
+    else impares++;
+    // suma
+    suma += x;
+    // min / max
+    if (x < min) min = x;
+    if (x > max) max = x;
+    // negativos
+    if (x < 0) {
+      if (primerNeg === -1) primerNeg = i;
+      ultimoNeg = i;
+    }
+  }
+  const promedio = arr.length > 0 ? suma / arr.length : 0;
+  return { pares, impares, suma, promedio, min, max, primerNeg, ultimoNeg };
+}
+console.log(estadisticas(datos));
+</script>

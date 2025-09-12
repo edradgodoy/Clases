@@ -30,7 +30,7 @@ html, body {
 
 .login-container input{
 	padding: 4px;
-	width: 100%;
+	width: calc(100% - 20px);
 	border: 2px solid #B1B1B1; 
     border-radius: 6px;
     padding: 10px;

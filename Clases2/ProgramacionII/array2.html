@@ -1,0 +1,59 @@
+<script>
+
+function sumaFilas(M) {
+  const n = M.length;
+  const res = new Array(n).fill(0);
+  for (let i = 0; i < n; i++) {
+    let acum = 0;
+    for (let j = 0; j < M[i].length; j++) {
+      acum += M[i][j];
+    }
+    res[i] = acum;
+  }
+  return res;
+}
+function sumaColumnas(M) {
+  const n = M.length;
+  const m = M[0].length;
+  const res = new Array(m).fill(0);
+  for (let j = 0; j < m; j++) {
+    let acum = 0;
+    for (let i = 0; i < n; i++) {
+      acum += M[i][j];
+    }
+    res[j] = acum;
+  }
+  return res;
+}
+function diagonales(M) {
+  const n = M.length;
+  let principal = 0;
+  let secundaria = 0;
+  for (let i = 0; i < n; i++) {
+    principal += M[i][i];
+    secundaria += M[i][n - 1 - i];
+  }
+  return { principal, secundaria };
+}
+function transpuesta(M) {
+  const n = M.length;
+  const m = M[0].length;
+  const T = Array.from({ length: m }, () => new Array(n));
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < m; j++) {
+      T[j][i] = M[i][j];
+    }
+  }
+  return T;
+}
+// Prueba
+const M = [
+  [1,2,3],
+  [4,5,6],
+  [7,8,9],
+];
+console.log("sumFilas:", sumaFilas(M));
+console.log("sumColumnas:", sumaColumnas(M));
+console.log("diagonales:", diagonales(M));
+console.log("transpuesta:", transpuesta(M));
+</script>

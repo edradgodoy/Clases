@@ -1,0 +1,35 @@
+<script>
+// var, let, const
+const datos = [10, -3, 5, 8, -1, 0, 7];
+function estadisticas(arr) {
+	let pares = 0;
+	let impares = 0;
+	let suma = 0;
+	let min = 0;
+	let max = 0;
+	for (var i = 0; i < arr.length; i++) {
+		suma = suma + arr[i]; // suma de los elementos
+		if ((arr[i]%2)===0) {
+			pares++; // cantidad de pares
+		} else {
+			impares++; // cantidad de impares
+		}
+		// minimo y maximo
+		if (arr[i]<=min) {
+			min = arr[i];
+		}
+		if (arr[i]>=max){
+			max = arr[i];
+		}
+	}
+	// promedio 
+	let promedio = suma/arr.length;
+	console.log('cantidad pares: '+pares);
+	console.log('Cantidad impares '+impares);
+	console.log('Suma total: '+suma);
+	console.log('Promedio: '+promedio);
+	console.log('Minimo: '+min);
+	console.log('Maximo: '+max);
+}
+estadisticas(datos);
+</script>

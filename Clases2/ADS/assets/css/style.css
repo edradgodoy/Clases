@@ -82,3 +82,151 @@ html, body {
 .btn-primary::-moz-focus-inner{
   border: 0;
 }
+
+
+
+
+
+
+
+
+
+/*
+
+================================================
+menu superior
+*/
+
+
+nav{
+  display: block;
+  height: 65px;
+  background-color: #06D78D;
+  font-size: 39px;
+  padding: 8px 15px;
+}
+nav>div{
+  display: inline-block;
+}
+.item-menu{
+  display: inline-block;
+}
+.item-menu ul {
+  list-style: none;
+  margin: 7px 0px; 
+  display: inline-block;
+}
+.item-menu ul>li{
+  display: inline-block;
+}
+.menu-right{
+  float: right;
+}
+.item-menu>img{
+  margin: 8px 15px;
+  float: right;
+}
+
+.mt-2{
+  margin-top: 8px;
+}
+
+/*
+==========================
+contenido principal
+*/
+
+.main-container{
+  width: 100%;
+  min-height: 400px;
+  display: block;
+}
+
+.main-container>div{
+  display: inline-block;
+}
+
+.container-menu{
+  width: 20%;
+  background-color: #B1B1B1;
+}
+
+.container-menu>ul{
+  margin: 0px;
+  list-style: none;
+}
+
+.container-menu li {
+  padding: 10px 15px;
+}
+
+.header-menu{
+  padding-left: 0px;
+
+  display: flex;
+  justify-content: space-between; /* Espaciado uniforme */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+
+}
+.header-menu li{
+  display: inline-block;
+  width: 20%;
+
+
+  flex: 1; /* Cada li ocupa el mismo espacio */
+  text-align: center; /* Centra el texto dentro de cada li */
+  padding: 10px 0; 
+
+}
+
+.header-menu li:hover{
+  background-color: #3d3d3d;
+  color: #f5f5f5;
+}
+
+
+
+
+/*
+==========================
+contenedor
+==========================
+*/
+
+.container{
+  background-color: #F5F5F5;
+  width: 79%;
+  height: 80%;
+  display: inline-block;
+}
+
+
+.card {
+  width: calc(24% - 10px);
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid #B1B1B1;
+  background-color: #FFFFFF;
+  display: inline-block;
+  align-content: center;
+  text-align: center;
+}
+
+.card>.card-img{
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  background-color: rgba(6, 199, 141, 0.2);
+  text-align: center;
+}
+
+.card-tittle{
+  font-size: 24px;
+}
+
+.card-text{
+  font-size: 18px;
+}

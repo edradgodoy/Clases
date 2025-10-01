@@ -1,0 +1,28 @@
+<script>
+let agenda = [
+	{nombre:'Aldebaran', telefono:'9865-6598', correo:'aldebaran@ejemplo.com'},
+	{nombre:'Anubis', telefono:'5426-9835', correo:'anubis@ejemplo.com'},
+	{nombre:'Cerbero', telefono:'3578-6595', correo:'cerbero@ejemplo.com'},
+	{nombre:'Zeus', telefono:'5486-9654', correo:'zeus@ejemplo.com'},
+	{nombre:'Kapnos', telefono:'8453-9862', correo:'kapnos@ejemplo.com'},
+	{nombre:'Thor', telefono:'3658-7624', correo:'thor@ejemplo.com'},
+	{nombre:'Ironman', telefono:'5843-6598', correo:'ironman@ejemplo.com'},
+	{nombre:'Hermes', telefono:'3458-6593', correo:'hermes@ejemplo.com'},
+	{nombre:'Efesto', telefono:'4586-3596', correo:'Efesto@ejemplo.com'},
+	{nombre:'Sisifo', telefono:'3244-7852', correo:'sisifo@ejemplo.com'}
+];
+let search = '3244-7852';
+for (var i = 0; i < agenda.length; i++) {
+	if (search.toLowerCase() == agenda[i]['nombre'].toLowerCase() || search == agenda[i]['telefono']) {
+		console.log(
+			'Nombre: '+agenda[i]['nombre']+
+			'\nTelefono: '+agenda[i]['telefono']+
+			'\nE-mail: '+agenda[i]['correo']
+		);
+		i=10;
+	}
+	if (i == (agenda.length -1)) {
+        console.log('No existe contacto con el nombre: '+search );
+    }
+}
+</script>

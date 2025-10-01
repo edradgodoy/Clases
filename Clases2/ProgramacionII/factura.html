@@ -1,0 +1,186 @@
+<script>
+
+// --- 1. Base de Datos de Productos ---
+const productos = [
+    { id: 1, nombre: "Laptop",                  precio: 850.00 },
+    { id: 2, nombre: "Smartphone",              precio: 499.50 },
+    { id: 3, nombre: "Mouse Inalámbrico",       precio: 25.99 },
+    { id: 4, nombre: "Teclado Mecánico",        precio: 75.00 },
+    { id: 5, nombre: "Monitor 27''",            precio: 215.75 },
+    { id: 6, nombre: "Disco Duro SSD 1TB",      precio: 90.00 },
+    { id: 7, nombre: "Webcam HD",               precio: 45.90 },
+    { id: 8, nombre: "Auriculares Bluetooth",   precio: 65.50 },
+    { id: 9, nombre: "Cable HDMI (2m)",         precio: 12.00 },
+    { id: 10, nombre: "Router WiFi 6",          precio: 130.00 },
+    { id: 11, nombre: "Batería Externa 10000mAh", precio: 35.00 },
+    { id: 12, nombre: "Impresora Multifuncional", precio: 180.00 },
+    { id: 13, nombre: "Memoria USB 64GB",       precio: 15.99 },
+    { id: 14, nombre: "Tarjeta Gráfica RTX",    precio: 550.00 },
+    { id: 15, nombre: "Mesa Ergonómica",        precio: 150.00 }
+];
+
+// Carrito para almacenar la selección
+let carrito = [];
+
+// --- 2. Funciones de Facturación ---
+
+/**
+ * Muestra la lista de productos disponibles en la consola.
+ */
+function mostrarProductos() {
+    console.log("--- LISTA DE PRODUCTOS DISPONIBLES ---");
+    productos.forEach(p => {
+        console.log(`ID: ${p.id} | Nombre: ${p.nombre.padEnd(30)} | Precio: $${p.precio.toFixed(2)}`);
+    });
+    console.log("-----------------------------------------");
+}
+
+/**
+ * Añade un producto al carrito.
+ */
+function agregarProducto() {
+    const idStr = prompt(" Ingrese el ID del producto que desea agregar (o escriba 'facturar' para finalizar):");
+    if (idStr === null || idStr.toLowerCase() === 'facturar') {
+        return false; // Indicador para finalizar
+    }
+
+    const id = parseInt(idStr);
+    const productoSeleccionado = productos.find(p => p.id === id);
+
+    if (!productoSeleccionado) {
+        console.error(`Error: Producto con ID ${id} no encontrado.`);
+        return true;
+    }
+
+    let cantidad = parseInt(prompt(`Ingrese la cantidad para "${productoSeleccionado.nombre}":`));
+
+    if (isNaN(cantidad) || cantidad <= 0) {
+        console.error(" Error: Cantidad no valida. Debe ser un número positivo.");
+        return true;
+    }
+    
+    // Buscar si el producto ya está en el carrito
+    const itemExistente = carrito.find(item => item.id === id);
+
+    if (itemExistente) {
+        itemExistente.cantidad += cantidad;
+        console.log(` ${productoSeleccionado.nombre} - Cantidad actualizada a ${itemExistente.cantidad}.`);
+    } else {
+        carrito.push({
+            id: productoSeleccionado.id,
+            nombre: productoSeleccionado.nombre,
+            precio: productoSeleccionado.precio,
+            cantidad: cantidad
+        });
+        console.log(` ${productoSeleccionado.nombre} agregado al carrito.`);
+    }
+
+    return true; // Indicador para continuar
+}
+
+/**
+ * Genera y muestra la factura con todos los totales.
+ * @returns {number} El total general de la factura.
+ */
+function generarFactura() {
+    if (carrito.length === 0) {
+        console.log("El carrito esta vacio. No se puede generar una factura.");
+        return 0;
+    }
+
+    console.log("\n=======================================================");
+    console.log("              FACTURA DE VENTA   ");
+    console.log("=======================================================");
+    console.log("Item | Producto                        | Cant | Precio U. | Total");
+    console.log("-----|---------------------------------|------|-----------|-------");
+
+    let totalGeneral = 0;
+    
+    carrito.forEach((item, index) => {
+        const totalItem = item.precio * item.cantidad;
+        totalGeneral += totalItem;
+
+        const linea = `${String(index + 1).padEnd(4)} | ` + 
+                      `${item.nombre.padEnd(30)}| ` + 
+                      `${String(item.cantidad).padEnd(5)}| ` + 
+                      `$${item.precio.toFixed(2).padEnd(9)}| ` + 
+                      `$${totalItem.toFixed(2)}`;
+        console.log(linea);
+    });
+
+    console.log("-------------------------------------------------------");
+    console.log(`                                        TOTAL FACTURADO: $${totalGeneral.toFixed(2)}`);
+    console.log("=======================================================");
+    
+    return totalGeneral;
+}
+
+/**
+ * Solicita el pago y calcula el cambio.
+ * @param {number} totalFacturado El monto total a pagar.
+ */
+function procesarPago(totalFacturado) {
+    if (totalFacturado <= 0) {
+        console.log("Proceso finalizado. No hay monto a cobrar.");
+        return;
+    }
+
+    let montoPago;
+    let pagoValido = false;
+
+    while (!pagoValido) {
+        const pagoStr = prompt(` COBRO: El total a pagar es $${totalFacturado.toFixed(2)}. Ingrese el monto con el que se paga:`);
+        
+        if (pagoStr === null) {
+            console.log(" Pago cancelado por el usuario.");
+            return;
+        }
+
+        montoPago = parseFloat(pagoStr);
+
+        if (isNaN(montoPago) || montoPago <= 0) {
+            console.error(" Error: Monto de pago no valido. Intente de nuevo.");
+        } else if (montoPago < totalFacturado) {
+            console.error(` Error: El monto ingresado ($${montoPago.toFixed(2)}) es menor al total ($${totalFacturado.toFixed(2)}).`);
+        } else {
+            pagoValido = true;
+        }
+    }
+
+    const cambio = montoPago - totalFacturado;
+
+    console.log("\n=======================================================");
+    console.log(`Monto Pagado: $${montoPago.toFixed(2)}`);
+    console.log(`Total a Pagar: $${totalFacturado.toFixed(2)}`);
+    console.log(`VUELTO/CAMBIO: $${cambio.toFixed(2)}`);
+    console.log("=======================================================");
+    console.log("¡Gracias por su compra! Vuelva pronto.");
+}
+
+
+// --- 3. Flujo Principal del Programa ---
+
+/**
+ * Función principal que orquesta todo el proceso.
+ */
+function iniciarFacturacion() {
+    console.clear(); // Limpia la consola para una mejor presentación
+    console.log("--- BIENVENIDO AL SISTEMA DE FACTURACION ---");
+    
+    mostrarProductos();
+
+    let continuar = true;
+    while (continuar) {
+        // La función agregarProducto devuelve false si el usuario quiere terminar
+        continuar = agregarProducto();
+    }
+    
+    const totalFacturado = generarFactura();
+
+    procesarPago(totalFacturado);
+}
+
+// Llama a la función para iniciar el proceso
+iniciarFacturacion();
+
+</script>

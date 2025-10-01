@@ -1,0 +1,29 @@
+<script>
+let agenda = [
+    { nombre: "Alicia", telefono: "555-1234", email: "alicia@ejemplo.com" },
+    { nombre: "Juan", telefono: "3542-9876", email: "juan@ejemplo.com" },
+    { nombre: "Marlene", telefono: "6598-6598", email: "marlene@ejemplo.com" },
+    { nombre: "Pedro", telefono: "9546-9876", email: "pedro@ejemplo.com" },
+    { nombre: "Maria", telefono: "9546-6895", email: "maria@ejemplo.com" },
+    { nombre: "David", telefono: "2459-8795", email: "david@ejemplo.com" },
+    { nombre: "Athan", telefono: "3257-8965", email: "athan@ejemplo.com" },
+    { nombre: "Anubis", telefono: "9875-6535", email: "anubis@ejemplo.com" },
+    { nombre: "Aldebaran", telefono: "9875-6595", email: "aldebaran@ejemplo.com" }
+];
+let search = 'Athan';
+for (var i = 0; i < agenda.length; i++) {
+    var format = agenda[i]['nombre'].toLowerCase();
+    if (format == search.toLowerCase() || agenda[i]['telefono'] == search) {
+        console.log(
+            'Nombre: '+agenda[i]['nombre'] + 
+            '\nTelefono: '+agenda[i]['telefono'] + 
+            '\nCorreo: '+agenda[i]['email']
+        );
+        i = 10;
+    }
+    if (i == (agenda.length -1)) {
+        console.log('El contacto no existe');
+    }
+} 
+</script>
+
